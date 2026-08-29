@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FastKeep — Support</title>
-<meta name="description" content="Support and help for FastKeep, the private fasting and streak timer.">
+<title>Apps by Javier — Pay once. No tracking.</title>
+<meta name="description" content="Simple, private utility apps by Javier. One-time purchase, no accounts, no analytics — your data never leaves your phone.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #131313;
@@ -15,7 +18,6 @@
     --accent: #F5A524;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
   body {
     background: var(--bg);
     color: var(--text);
@@ -23,141 +25,178 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-  .wrap { max-width: 640px; margin: 0 auto; padding: 0 24px; }
+  .display { font-family: "Space Grotesk", -apple-system, sans-serif; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
 
-  header { padding: 72px 0 56px; text-align: center; }
-  .ring {
-    width: 76px; height: 76px; margin: 0 auto 24px;
-    border-radius: 50%;
-    border: 4px solid var(--accent);
-    display: flex; align-items: center; justify-content: center;
+  /* Manifesto hero */
+  header { padding: 88px 0 64px; }
+  .eyebrow {
+    font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 28px;
   }
-  .ring svg { width: 32px; height: 32px; }
-  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; }
-  .tagline { color: var(--muted); margin-top: 8px; font-size: 1.05rem; }
-
-  .badges { margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-  .badge {
-    font-size: 0.78rem; color: var(--accent);
-    border: 1px solid var(--line); border-radius: 999px;
-    padding: 5px 14px; letter-spacing: 0.04em;
+  h1 {
+    font-size: clamp(2.2rem, 6vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
   }
+  h1 .keep { color: var(--accent); }
+  .stance {
+    margin-top: 24px;
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 46ch;
+  }
+  .stance strong { color: var(--text); font-weight: 600; }
 
+  /* Principles */
+  .principles {
+    margin-top: 48px;
+    border-top: 1px solid var(--line);
+  }
+  .principle {
+    display: flex; gap: 18px; align-items: baseline;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .principle .no {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700; font-size: 0.95rem;
+    color: var(--accent);
+    min-width: 84px;
+    letter-spacing: 0.02em;
+  }
+  .principle p { color: var(--muted); font-size: 0.95rem; }
+  .principle p strong { color: var(--text); font-weight: 600; }
+
+  /* App grid */
   main { padding-bottom: 80px; }
-  section { margin-top: 48px; }
   h2 {
-    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;
-    color: var(--accent); margin-bottom: 20px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--muted); margin: 56px 0 20px;
   }
-
-  .card {
+  .app-card {
+    display: flex; gap: 20px; align-items: center;
     background: var(--surface);
     border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 20px 22px;
-    margin-bottom: 12px;
+    border-radius: 16px;
+    padding: 22px;
+    transition: border-color 0.15s ease;
   }
-  .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
-  .card p { color: var(--muted); font-size: 0.95rem; }
-  .card p + p { margin-top: 8px; }
+  .app-card:hover { border-color: var(--accent); }
+  .app-icon {
+    flex-shrink: 0;
+    width: 68px; height: 68px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .app-icon .ring {
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 3px solid var(--accent);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .app-icon svg { width: 18px; height: 18px; }
+  .app-info { flex: 1; min-width: 0; }
+  .app-info h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.15rem; font-weight: 700;
+  }
+  .app-info .app-desc { color: var(--muted); font-size: 0.92rem; margin-top: 2px; }
+  .app-links { margin-top: 10px; display: flex; gap: 16px; flex-wrap: wrap; }
+  .app-links a { font-size: 0.88rem; font-weight: 500; }
 
   a { color: var(--accent); text-decoration: none; }
   a:hover, a:focus { text-decoration: underline; }
   a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 
-  .contact-card {
-    text-align: center;
-    padding: 32px 22px;
-  }
-  .contact-card .email {
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 1.1rem;
-    font-weight: 600;
-  }
-  .contact-card .note { margin-top: 12px; font-size: 0.85rem; color: var(--muted); }
-
   footer {
     border-top: 1px solid var(--line);
     padding: 28px 0 48px;
-    text-align: center;
     color: var(--muted);
     font-size: 0.85rem;
   }
+  .foot-links { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 10px; }
   footer a { color: var(--muted); }
   footer a:hover { color: var(--accent); }
-  .foot-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 10px; }
+
+  @media (max-width: 480px) {
+    header { padding: 64px 0 48px; }
+    .app-card { flex-direction: column; align-items: flex-start; }
+  }
 </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div class="ring" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="#F5A524" xmlns="http://www.w3.org/2000/svg">
-          <path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12L13 2z"/>
-        </svg>
-      </div>
-      <h1>FastKeep</h1>
-      <p class="tagline">A private fasting &amp; streak timer. Your data never leaves your phone.</p>
-      <div class="badges">
-        <span class="badge">One-time purchase</span>
-        <span class="badge">No account</span>
-        <span class="badge">No tracking</span>
+      <p class="eyebrow">Apps by Javier</p>
+      <h1 class="display">Simple apps.<br>Pay once. <span class="keep">Keep forever.</span></h1>
+      <p class="stance">Most apps today want a subscription, an account, and your data. <strong>These don't.</strong> Every app here is a small, focused tool that you buy once and own — and everything it records stays on your phone.</p>
+
+      <div class="principles" aria-label="Principles">
+        <div class="principle">
+          <span class="no">No subs</span>
+          <p><strong>One price, once.</strong> Updates included. If an app isn't worth paying for outright, it isn't worth building.</p>
+        </div>
+        <div class="principle">
+          <span class="no">No account</span>
+          <p><strong>Nothing to sign up for.</strong> Open the app and use it. Your email is yours.</p>
+        </div>
+        <div class="principle">
+          <span class="no">No tracking</span>
+          <p><strong>No analytics, no cloud, no data collection.</strong> Your data lives on your device and nowhere else — export it to a file any time.</p>
+        </div>
+        <div class="principle">
+          <span class="no">No bloat</span>
+          <p><strong>Each app does one thing well.</strong> No feeds, no AI coaches, no premium tiers hiding the useful parts.</p>
+        </div>
       </div>
     </header>
 
     <main>
-      <section aria-labelledby="faq">
-        <h2 id="faq">Frequently asked questions</h2>
+      <h2>The apps</h2>
 
-        <div class="card">
-          <h3>Where is my data stored?</h3>
-          <p>Everything FastKeep records — your fasts, streaks, and settings — is stored locally on your iPhone. Nothing is uploaded, synced, or shared. There are no accounts and no servers.</p>
+      <div class="app-card">
+        <div class="app-icon" aria-hidden="true">
+          <div class="ring">
+            <svg viewBox="0 0 24 24" fill="#F5A524" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12L13 2z"/>
+            </svg>
+          </div>
         </div>
+        <div class="app-info">
+          <h3 class="display">FastKeep</h3>
+          <p class="app-desc">A private fasting &amp; quit-streak timer. Track fasting windows and days-since-quit streaks — offline, on your phone.</p>
+          <div class="app-links">
+            <a href="fastkeep.html">Support &amp; FAQ</a>
+            <a href="APP-STORE-LINK-HERE" rel="noopener">App Store &rarr;</a>
+          </div>
+        </div>
+      </div>
 
-        <div class="card">
-          <h3>How do I back up or move my data to a new phone?</h3>
-          <p>Use <strong>Export</strong> in Settings to save your data as a file, keep it somewhere safe (like iCloud Drive or Files), then use <strong>Import</strong> on your new phone to restore it.</p>
-          <p>Because FastKeep has no cloud sync by design, this export file is your backup — we recommend exporting occasionally.</p>
+      <div class="app-card">
+        <div class="app-icon">
+          <img src="renewals-icon.png" alt="Renewals app icon" width="68" height="68" style="width:68px;height:68px;border-radius:16px;display:block;">
         </div>
-
-        <div class="card">
-          <h3>Is this a subscription?</h3>
-          <p>No. FastKeep is a one-time purchase. Pay once, keep it forever, including updates.</p>
+        <div class="app-info">
+          <h3 class="display">Renewals</h3>
+          <p class="app-desc">A private subscription tracker. See what you pay, when every renewal hits, and keep spending under your goal &mdash; offline, on your phone.</p>
+          <div class="app-links">
+            <a href="renewals.html">Support &amp; FAQ</a>
+            <a href="RENEWALS-APP-STORE-LINK-HERE" rel="noopener">App Store &rarr;</a>
+          </div>
         </div>
-
-        <div class="card">
-          <h3>I deleted the app — can you recover my data?</h3>
-          <p>Unfortunately no. Because your data lives only on your device, deleting the app deletes its data, and we have no copy anywhere to restore from. An export file made beforehand is the only way to bring data back.</p>
-        </div>
-
-        <div class="card">
-          <h3>Does FastKeep give medical or dietary advice?</h3>
-          <p>No. FastKeep is a timer and streak tracker only. It doesn't provide medical guidance — for questions about whether fasting is right for you, please talk to a health professional.</p>
-        </div>
-
-        <div class="card">
-          <h3>How do I request a refund?</h3>
-          <p>Purchases are handled by Apple, so refunds go through them: visit <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>, sign in, and select your FastKeep purchase.</p>
-        </div>
-      </section>
-
-      <section aria-labelledby="contact">
-        <h2 id="contact">Contact</h2>
-        <div class="card contact-card">
-          <p>Found a bug, have a feature idea, or need help?</p>
-          <a class="email" href="mailto:simplesapps@icloud.com">simplesapps@icloud.com</a>
-          <p class="note">Solo developer — I read everything and usually reply within a couple of days.</p>
-        </div>
-      </section>
+      </div>
     </main>
 
     <footer>
       <div class="foot-links">
         <a href="privacy.html">Privacy Policy</a>
-        <a href="mailto:simplesapps@icloud.com">Email support</a>
+        <a href="mailto:simplesapps@icloud.com">Contact</a>
       </div>
-      <p>FastKeep is developed by Javier Alejandro Serrano.</p>
+      <p>&copy; 2026 Javier</p>
     </footer>
   </div>
 </body>

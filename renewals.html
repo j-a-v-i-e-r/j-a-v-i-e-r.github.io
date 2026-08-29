@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renewals — Support</title>
+<meta name="description" content="Support and help for Renewals, the private subscription tracker.">
+<style>
+  :root {
+    --bg: #131313;
+    --surface: #1c1c1c;
+    --line: #2a2a2a;
+    --text: #f2f0ec;
+    --muted: #9a968e;
+    --accent: #F5A524;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 72px 0 56px; text-align: center; }
+  .back-row { text-align: left; margin-bottom: 28px; }
+  .back-row a { font-size: 0.9rem; color: var(--muted); }
+  .back-row a:hover { color: var(--accent); }
+  .ring {
+    width: 76px; height: 76px; margin: 0 auto 24px;
+    border-radius: 50%;
+    border: 4px solid var(--accent);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ring svg { width: 34px; height: 34px; }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; }
+  .tagline { color: var(--muted); margin-top: 8px; font-size: 1.05rem; }
+
+  .badges { margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .badge {
+    font-size: 0.78rem; color: var(--accent);
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 5px 14px; letter-spacing: 0.04em;
+  }
+
+  main { padding-bottom: 80px; }
+  section { margin-top: 48px; }
+  h2 {
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--accent); margin-bottom: 20px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin-bottom: 12px;
+  }
+  .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+  .card p { color: var(--muted); font-size: 0.95rem; }
+  .card p + p { margin-top: 8px; }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover, a:focus { text-decoration: underline; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+  .contact-card {
+    text-align: center;
+    padding: 32px 22px;
+  }
+  .contact-card .email {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .contact-card .note { margin-top: 12px; font-size: 0.85rem; color: var(--muted); }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 28px 0 48px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--accent); }
+  .foot-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="back-row"><a href="index.html">&larr; All apps</a></div>
+      <img src="renewals-icon.png" alt="" aria-hidden="true" width="76" height="76" style="width:76px;height:76px;border-radius:18px;display:block;margin:0 auto 24px;border:1px solid var(--line);">
+      <h1>Renewals</h1>
+      <p class="tagline">A private subscription tracker. Know what you pay — before it renews.</p>
+      <div class="badges">
+        <span class="badge">One-time purchase</span>
+        <span class="badge">No account</span>
+        <span class="badge">No tracking</span>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="faq">
+        <h2 id="faq">Frequently asked questions</h2>
+
+        <div class="card">
+          <h3>Where is my data stored?</h3>
+          <p>Everything you enter in Renewals — your subscriptions, categories, spending goal, and settings — is stored locally on your iPhone. Nothing is uploaded, synced, or shared. There are no accounts and no servers.</p>
+        </div>
+
+        <div class="card">
+          <h3>Is Renewals itself a subscription?</h3>
+          <p>No — and yes, we see what a bad look that would be for a subscription tracker. Renewals is a one-time purchase. Pay once, keep it forever, including updates.</p>
+        </div>
+
+        <div class="card">
+          <h3>How do currency conversions work?</h3>
+          <p>If you track subscriptions in more than one currency, Renewals fetches current exchange rates from a public API (frankfurter.app) so your totals make sense in your main currency.</p>
+          <p>This is the only network request the app makes. It contains no personal data and nothing about your subscriptions — it only downloads the day's rates. Without a connection, Renewals keeps working with the last rates it saw.</p>
+        </div>
+
+        <div class="card">
+          <h3>How do I back up or move my data to a new phone?</h3>
+          <p>Use <strong>Export</strong> in Settings to save your data as a file, keep it somewhere safe (like iCloud Drive or Files), then use <strong>Import</strong> on your new phone to restore it.</p>
+          <p>Because Renewals has no cloud sync by design, this export file is your backup — we recommend exporting occasionally.</p>
+        </div>
+
+        <div class="card">
+          <h3>I deleted the app — can you recover my data?</h3>
+          <p>Unfortunately no. Because your data lives only on your device, deleting the app deletes its data, and we have no copy anywhere to restore from. An export file made beforehand is the only way to bring data back.</p>
+        </div>
+
+        <div class="card">
+          <h3>Does Renewals cancel subscriptions for me?</h3>
+          <p>No. Renewals shows you what you're paying and when each renewal hits, so nothing surprises you — but cancelling happens wherever you subscribed (the App Store, the service's website, and so on). Renewals never has access to your accounts, which is exactly why it can't touch them.</p>
+        </div>
+
+        <div class="card">
+          <h3>How do I request a refund?</h3>
+          <p>Purchases are handled by Apple, so refunds go through them: visit <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>, sign in, and select your Renewals purchase.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="contact">
+        <h2 id="contact">Contact</h2>
+        <div class="card contact-card">
+          <p>Found a bug, have a feature idea, or need help?</p>
+          <a class="email" href="mailto:simplesapps@icloud.com">simplesapps@icloud.com</a>
+          <p class="note">Solo developer — I read everything and usually reply within a couple of days.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="foot-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="mailto:simplesapps@icloud.com">Email support</a>
+      </div>
+      <p>Renewals is developed by Javier.</p>
+    </footer>
+  </div>
+</body>
+</html>
