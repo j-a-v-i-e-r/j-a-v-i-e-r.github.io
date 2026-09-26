@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AtHand — Support</title>
+<meta name="description" content="Support and help for AtHand, the private family document vault. Ayuda y soporte para AtHand.">
+<style>
+  :root {
+    --bg: #131313;
+    --surface: #1c1c1c;
+    --line: #2a2a2a;
+    --text: #f2f0ec;
+    --muted: #9a968e;
+    --brand: #2B5B5A;   /* AtHand teal, used for fills */
+    --accent: #86C5BA;  /* lightened AtHand teal, readable on dark */
+    --cream: #F3EBDD;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 24px; }
+
+  .topbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 40px; font-size: 0.9rem;
+  }
+  .topbar a { color: var(--muted); }
+  .topbar a:hover { color: var(--accent); }
+
+  header { padding: 40px 0 56px; text-align: center; }
+  .icon {
+    width: 76px; height: 76px; margin: 0 auto 24px;
+    border-radius: 18px; overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .icon img { width: 100%; height: 100%; display: block; object-fit: cover; }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; }
+  .tagline { color: var(--muted); margin-top: 8px; font-size: 1.05rem; }
+
+  .badges { margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .badge {
+    font-size: 0.78rem; color: var(--cream);
+    background: var(--brand);
+    border-radius: 999px;
+    padding: 5px 14px; letter-spacing: 0.04em;
+  }
+
+  main { padding-bottom: 80px; }
+  section { margin-top: 48px; }
+  h2 {
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--accent); margin-bottom: 20px;
+  }
+  .lang-divider {
+    margin-top: 72px; padding-top: 40px;
+    border-top: 1px solid var(--line);
+  }
+  .lang-divider h2 { font-size: 1.4rem; text-transform: none; letter-spacing: -0.01em; color: var(--text); }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin-bottom: 12px;
+  }
+  .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+  .card p { color: var(--muted); font-size: 0.95rem; }
+  .card p + p { margin-top: 8px; }
+  .card strong { color: var(--text); font-weight: 600; }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover, a:focus { text-decoration: underline; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+  .contact-card { text-align: center; padding: 32px 22px; }
+  .contact-card .email { display: inline-block; margin-top: 10px; font-size: 1.1rem; font-weight: 600; }
+  .contact-card .note { margin-top: 12px; font-size: 0.85rem; color: var(--muted); }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 28px 0 48px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--accent); }
+  .foot-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a href="../">&larr; All apps</a>
+      <a href="#es" lang="es">Español &darr;</a>
+    </div>
+
+    <header>
+      <div class="icon" aria-hidden="true"><img src="icon.png" alt="" width="76" height="76"></div>
+      <h1>AtHand</h1>
+      <p class="tagline">Your family's documents, always at hand &mdash; and never anywhere else.</p>
+      <div class="badges">
+        <span class="badge">Free to try</span>
+        <span class="badge">One-time unlock</span>
+        <span class="badge">No account</span>
+        <span class="badge">No tracking</span>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="faq">
+        <h2 id="faq">Frequently asked questions</h2>
+
+        <div class="card">
+          <h3>Where are my documents stored?</h3>
+          <p>Only on your iPhone. AtHand has no servers and no account, so your documents, scans and details never reach us or anyone else. Files are protected by iOS data protection, which keeps them encrypted while your phone is locked.</p>
+          <p>If iCloud Backup is turned on for your iPhone, Apple includes AtHand's data in that device backup, as it does for every app. AtHand itself doesn't sync anywhere.</p>
+        </div>
+
+        <div class="card">
+          <h3>How does the free version work?</h3>
+          <p>You can add up to <strong>3 documents</strong> for free. Everything else is included: unlimited people, scans, pages, reminders, sharing, app lock and backups.</p>
+          <p>A single one-time purchase unlocks unlimited documents. No subscription, no ads. If you never buy it, your existing documents stay fully yours: you can always view, edit, share, export and delete them.</p>
+        </div>
+
+        <div class="card">
+          <h3>How do I restore my purchase?</h3>
+          <p>Go to <strong>Settings &rarr; Restore Purchases</strong> (it's also on the unlock screen). The unlock supports <strong>Family Sharing</strong>, so family members in your Apple Family Sharing group get it too.</p>
+        </div>
+
+        <div class="card">
+          <h3>How do I back up or move to a new iPhone?</h3>
+          <p>Go to <strong>Settings &rarr; Export backup</strong> and choose a password. AtHand creates an encrypted backup file (AES-256) that you can save to Files or iCloud Drive, or AirDrop to another device. On the new iPhone, use <strong>Settings &rarr; Restore from backup</strong> and choose to replace or merge.</p>
+          <p><strong>Keep the password safe.</strong> Without it the backup can't be opened, by you or by us.</p>
+        </div>
+
+        <div class="card">
+          <h3>When do reminders arrive?</h3>
+          <p>At 9:00 AM local time on each day you chose, for example a month or six months before the expiration date. If you don't get them, check that notifications are allowed in iOS <strong>Settings &rarr; AtHand</strong>.</p>
+          <p>Reminders show the person, the document name and the date, never the document number.</p>
+        </div>
+
+        <div class="card">
+          <h3>Face ID isn't working</h3>
+          <p>You can always unlock with your iPhone passcode instead. You can also turn App lock off in <strong>Settings</strong>. AtHand never sees your face data: iOS only tells the app whether unlocking succeeded.</p>
+        </div>
+
+        <div class="card">
+          <h3>I deleted the app. Can you recover my documents?</h3>
+          <p>No. Because your documents live only on your device, deleting the app deletes them, and there's no copy anywhere for us to restore from. A backup you exported yourself, or an iCloud backup of your iPhone, is the only way to bring them back.</p>
+        </div>
+
+        <div class="card">
+          <h3>How do I request a refund?</h3>
+          <p>Purchases are handled by Apple, so refunds go through them: visit <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>, sign in, and select your AtHand purchase.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="contact">
+        <h2 id="contact">Contact</h2>
+        <div class="card contact-card">
+          <p>Found a bug, have a feature idea, or need help?</p>
+          <a class="email" href="mailto:simplesapps@icloud.com">simplesapps@icloud.com</a>
+          <p class="note">Solo developer. I read everything and usually reply within 48 hours.</p>
+        </div>
+      </section>
+
+      <div lang="es">
+        <section class="lang-divider" aria-labelledby="es">
+          <h2 id="es">AtHand en español</h2>
+        </section>
+
+        <section aria-labelledby="faq-es">
+          <h2 id="faq-es">Preguntas frecuentes</h2>
+
+          <div class="card">
+            <h3>¿Dónde se guardan mis documentos?</h3>
+            <p>Solo en tu iPhone. AtHand no tiene servidores ni cuentas, así que tus documentos, escaneos y datos nunca nos llegan a nosotros ni a nadie más. Los archivos están protegidos por la protección de datos de iOS, que los mantiene cifrados mientras tu teléfono está bloqueado.</p>
+            <p>Si tienes activado el respaldo de iCloud en tu iPhone, Apple incluye los datos de AtHand en ese respaldo del dispositivo, como con cualquier app. AtHand por sí misma no sincroniza nada.</p>
+          </div>
+
+          <div class="card">
+            <h3>¿Cómo funciona la versión gratuita?</h3>
+            <p>Puedes agregar hasta <strong>3 documentos</strong> gratis. Todo lo demás está incluido: personas ilimitadas, escaneos, páginas, recordatorios, compartir, bloqueo de la app y respaldos.</p>
+            <p>Un solo pago desbloquea documentos ilimitados. Sin suscripción y sin anuncios. Si no lo compras, tus documentos siguen siendo tuyos: siempre puedes verlos, editarlos, compartirlos, exportarlos y borrarlos.</p>
+          </div>
+
+          <div class="card">
+            <h3>¿Cómo restauro mi compra?</h3>
+            <p>Ve a <strong>Ajustes &rarr; Restaurar compras</strong> (también está en la pantalla de desbloqueo). El desbloqueo es compatible con <strong>En Familia</strong>, así que los integrantes de tu grupo familiar de Apple también lo reciben.</p>
+          </div>
+
+          <div class="card">
+            <h3>¿Cómo respaldo o paso mis documentos a un iPhone nuevo?</h3>
+            <p>Ve a <strong>Ajustes &rarr; Exportar respaldo</strong> y elige una contraseña. AtHand crea un archivo de respaldo cifrado (AES-256) que puedes guardar en Archivos o iCloud Drive, o enviar por AirDrop. En el iPhone nuevo, usa <strong>Ajustes &rarr; Restaurar respaldo</strong> y elige reemplazar o combinar.</p>
+            <p><strong>Guarda bien la contraseña.</strong> Sin ella, nadie puede abrir el respaldo, ni tú ni nosotros.</p>
+          </div>
+
+          <div class="card">
+            <h3>¿Cuándo llegan los recordatorios?</h3>
+            <p>A las 9:00 a. m., hora local, en cada día que elegiste, por ejemplo un mes o seis meses antes del vencimiento. Si no te llegan, revisa que las notificaciones estén permitidas en <strong>Ajustes de iOS &rarr; AtHand</strong>.</p>
+            <p>Los recordatorios muestran la persona, el nombre del documento y la fecha, nunca el número del documento.</p>
+          </div>
+
+          <div class="card">
+            <h3>Face ID no funciona</h3>
+            <p>Siempre puedes desbloquear con el código de tu iPhone. También puedes desactivar el bloqueo de la app en <strong>Ajustes</strong>. AtHand nunca ve los datos de tu rostro: iOS solo le indica a la app si el desbloqueo funcionó.</p>
+          </div>
+
+          <div class="card">
+            <h3>Borré la app. ¿Pueden recuperar mis documentos?</h3>
+            <p>No. Como tus documentos viven solo en tu dispositivo, al borrar la app se borran, y no existe ninguna copia desde la cual podamos restaurarlos. Un respaldo que tú hayas exportado, o un respaldo de iCloud de tu iPhone, es la única forma de recuperarlos.</p>
+          </div>
+
+          <div class="card">
+            <h3>¿Cómo pido un reembolso?</h3>
+            <p>Las compras las procesa Apple, así que los reembolsos se solicitan con ellos: entra a <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>, inicia sesión y selecciona tu compra de AtHand.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="contact-es">
+          <h2 id="contact-es">Contacto</h2>
+          <div class="card contact-card">
+            <p>¿Encontraste un error, tienes una idea o necesitas ayuda?</p>
+            <a class="email" href="mailto:simplesapps@icloud.com">simplesapps@icloud.com</a>
+            <p class="note">Desarrollador independiente. Leo todo y normalmente respondo en menos de 48 horas.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="foot-links">
+        <a href="privacy.html">AtHand Privacy Policy</a>
+        <a href="privacy.html#es" lang="es">Aviso de privacidad</a>
+        <a href="mailto:simplesapps@icloud.com">Email support</a>
+      </div>
+      <p>AtHand is developed by Javier.</p>
+    </footer>
+  </div>
+</body>
+</html>

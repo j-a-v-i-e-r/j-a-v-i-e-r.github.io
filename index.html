@@ -63,7 +63,8 @@
     font-family: "Space Grotesk", sans-serif;
     font-weight: 700; font-size: 0.95rem;
     color: var(--accent);
-    min-width: 84px;
+    min-width: 108px;
+    white-space: nowrap;
     letter-spacing: 0.02em;
   }
   .principle p { color: var(--muted); font-size: 0.95rem; }
@@ -92,7 +93,9 @@
     border: 1px solid var(--line);
     border-radius: 16px;
     display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
   }
+  .app-icon img { width: 100%; height: 100%; display: block; object-fit: cover; }
   .app-icon .ring {
     width: 44px; height: 44px; border-radius: 50%;
     border: 3px solid var(--accent);
@@ -107,6 +110,7 @@
   .app-info .app-desc { color: var(--muted); font-size: 0.92rem; margin-top: 2px; }
   .app-links { margin-top: 10px; display: flex; gap: 16px; flex-wrap: wrap; }
   .app-links a { font-size: 0.88rem; font-weight: 500; }
+  .app-links .soon { font-size: 0.88rem; color: var(--muted); }
 
   a { color: var(--accent); text-decoration: none; }
   a:hover, a:focus { text-decoration: underline; }
@@ -138,7 +142,7 @@
       <div class="principles" aria-label="Principles">
         <div class="principle">
           <span class="no">No subs</span>
-          <p><strong>One price, once.</strong> Updates included. If an app isn't worth paying for outright, it isn't worth building.</p>
+          <p><strong>Pay once, keep it.</strong> Updates included. Some apps let you try them free first, then unlock everything with a single purchase &mdash; never a subscription.</p>
         </div>
         <div class="principle">
           <span class="no">No account</span>
@@ -150,7 +154,7 @@
         </div>
         <div class="principle">
           <span class="no">No bloat</span>
-          <p><strong>Each app does one thing well.</strong> No feeds, no AI coaches, no premium tiers hiding the useful parts.</p>
+          <p><strong>Each app does one thing well.</strong> No feeds, no AI coaches, no ads.</p>
         </div>
       </div>
     </header>
@@ -171,21 +175,35 @@
           <p class="app-desc">A private fasting &amp; quit-streak timer. Track fasting windows and days-since-quit streaks — offline, on your phone.</p>
           <div class="app-links">
             <a href="fastkeep.html">Support &amp; FAQ</a>
-            <a href="https://apps.apple.com/mx/app/fastkeep-fasting-timer/id6790628903?l=en-GB" rel="noopener">App Store &rarr;</a>
+            <a href="https://apps.apple.com/app/fastkeep-fasting-timer/id6790628903" rel="noopener">App Store &rarr;</a>
           </div>
         </div>
       </div>
 
       <div class="app-card">
-        <div class="app-icon">
-          <img src="renewals-icon.png" alt="Renewals app icon" width="68" height="68" style="width:68px;height:68px;border-radius:16px;display:block;">
+        <div class="app-icon" aria-hidden="true">
+          <img src="renewals-icon.png" alt="" width="68" height="68">
         </div>
         <div class="app-info">
           <h3 class="display">Renewals</h3>
           <p class="app-desc">A private subscription tracker. See what you pay, when every renewal hits, and keep spending under your goal &mdash; offline, on your phone.</p>
           <div class="app-links">
             <a href="renewals.html">Support &amp; FAQ</a>
-            <a href="RENEWALS-APP-STORE-LINK-HERE" rel="noopener">App Store &rarr;</a>
+            <a href="https://apps.apple.com/app/renewals-subscription-tracker/id6797020052" rel="noopener">App Store &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-icon" aria-hidden="true">
+          <img src="athand/icon.png" alt="" width="68" height="68">
+        </div>
+        <div class="app-info">
+          <h3 class="display">AtHand</h3>
+          <p class="app-desc">A private family document vault. Passports, IDs and certificates organized by person, with reminders before anything expires &mdash; on your phone, nowhere else. Free to try, one-time unlock.</p>
+          <div class="app-links">
+            <a href="athand/">Support &amp; FAQ</a>
+            <span class="soon">Coming soon to the App Store</span>
           </div>
         </div>
       </div>
