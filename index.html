@@ -26,10 +26,10 @@
     -webkit-font-smoothing: antialiased;
   }
   .display { font-family: "Space Grotesk", -apple-system, sans-serif; }
-  .wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
 
   /* Manifesto hero */
-  header { padding: 88px 0 64px; }
+  header { padding: 88px 0 64px; max-width: 680px; }
   .eyebrow {
     font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase;
     color: var(--muted); margin-bottom: 28px;
@@ -77,40 +77,69 @@
     font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.14em;
     color: var(--muted); margin: 56px 0 20px;
   }
+  .app-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
   .app-card {
-    display: flex; gap: 20px; align-items: center;
+    --card-accent: var(--accent);
+    position: relative;
+    display: flex; flex-direction: column; gap: 14px;
     background: var(--surface);
     border: 1px solid var(--line);
     border-radius: 16px;
-    padding: 22px;
+    padding: 24px;
     transition: border-color 0.15s ease;
   }
-  .app-card:hover { border-color: var(--accent); }
+  .app-card:hover { border-color: var(--card-accent); }
+  .app-card:focus-within { border-color: var(--card-accent); }
+  .app-card.teal { --card-accent: #86C5BA; }
+  .app-head { display: flex; gap: 16px; align-items: center; }
   .app-icon {
     flex-shrink: 0;
-    width: 68px; height: 68px;
+    width: 60px; height: 60px;
     background: var(--bg);
     border: 1px solid var(--line);
-    border-radius: 16px;
+    border-radius: 14px;
     display: flex; align-items: center; justify-content: center;
     overflow: hidden;
   }
   .app-icon img { width: 100%; height: 100%; display: block; object-fit: cover; }
   .app-icon .ring {
-    width: 44px; height: 44px; border-radius: 50%;
+    width: 40px; height: 40px; border-radius: 50%;
     border: 3px solid var(--accent);
     display: flex; align-items: center; justify-content: center;
   }
-  .app-icon svg { width: 18px; height: 18px; }
-  .app-info { flex: 1; min-width: 0; }
-  .app-info h3 {
+  .app-icon svg { width: 16px; height: 16px; }
+  .app-card h3 {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 1.15rem; font-weight: 700;
+    font-size: 1.25rem; font-weight: 700;
   }
-  .app-info .app-desc { color: var(--muted); font-size: 0.92rem; margin-top: 2px; }
-  .app-links { margin-top: 10px; display: flex; gap: 16px; flex-wrap: wrap; }
-  .app-links a { font-size: 0.88rem; font-weight: 500; }
-  .app-links .soon { font-size: 0.88rem; color: var(--muted); }
+  /* the title link covers the whole card, so clicking anywhere opens support */
+  .app-card h3 a { color: var(--text); transition: color 0.15s ease; }
+  .app-card h3 a::after {
+    content: ""; position: absolute; inset: 0; border-radius: 16px;
+  }
+  .app-card:hover h3 a { color: var(--card-accent); text-decoration: none; }
+  .app-card h3 a:focus-visible { outline: none; }
+  .app-card h3 a:focus-visible::after { outline: 2px solid var(--card-accent); outline-offset: 3px; }
+  .app-desc { color: var(--muted); font-size: 0.93rem; }
+  .app-links {
+    margin-top: auto; padding-top: 4px;
+    display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+  }
+  .app-links a, .app-links .soon { position: relative; z-index: 1; font-size: 0.88rem; }
+  .app-links a { font-weight: 500; }
+  .app-links .soon { color: var(--muted); }
+
+  .app-card.next {
+    background: transparent;
+    border: 1px dashed var(--line);
+    justify-content: center;
+  }
+  .app-card.next:hover { border-color: var(--line); }
+  .app-card.next h3 { color: var(--muted); font-size: 1.1rem; }
 
   a { color: var(--accent); text-decoration: none; }
   a:hover, a:focus { text-decoration: underline; }
@@ -126,9 +155,12 @@
   footer a { color: var(--muted); }
   footer a:hover { color: var(--accent); }
 
+  @media (max-width: 680px) {
+    .app-grid { grid-template-columns: 1fr; }
+  }
   @media (max-width: 480px) {
     header { padding: 64px 0 48px; }
-    .app-card { flex-direction: column; align-items: flex-start; }
+
   }
 </style>
 </head>
@@ -162,49 +194,56 @@
     <main>
       <h2>The apps</h2>
 
-      <div class="app-card">
-        <div class="app-icon" aria-hidden="true">
-          <div class="ring">
-            <svg viewBox="0 0 24 24" fill="#F5A524" xmlns="http://www.w3.org/2000/svg">
-              <path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12L13 2z"/>
-            </svg>
+      <div class="app-grid">
+        <article class="app-card">
+          <div class="app-head">
+            <div class="app-icon" aria-hidden="true">
+              <div class="ring">
+                <svg viewBox="0 0 24 24" fill="#F5A524" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12L13 2z"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="display"><a href="fastkeep.html">FastKeep</a></h3>
           </div>
-        </div>
-        <div class="app-info">
-          <h3 class="display">FastKeep</h3>
-          <p class="app-desc">A private fasting &amp; quit-streak timer. Track fasting windows and days-since-quit streaks — offline, on your phone.</p>
+          <p class="app-desc">A private fasting &amp; quit-streak timer. Track fasting windows and days-since-quit streaks &mdash; offline, on your phone.</p>
           <div class="app-links">
             <a href="fastkeep.html">Support &amp; FAQ</a>
             <a href="https://apps.apple.com/app/fastkeep-fasting-timer/id6790628903" rel="noopener">App Store &rarr;</a>
           </div>
-        </div>
-      </div>
+        </article>
 
-      <div class="app-card">
-        <div class="app-icon" aria-hidden="true">
-          <img src="renewals-icon.png" alt="" width="68" height="68">
-        </div>
-        <div class="app-info">
-          <h3 class="display">Renewals</h3>
+        <article class="app-card">
+          <div class="app-head">
+            <div class="app-icon" aria-hidden="true">
+              <img src="renewals-icon.png" alt="" width="60" height="60">
+            </div>
+            <h3 class="display"><a href="renewals.html">Renewals</a></h3>
+          </div>
           <p class="app-desc">A private subscription tracker. See what you pay, when every renewal hits, and keep spending under your goal &mdash; offline, on your phone.</p>
           <div class="app-links">
             <a href="renewals.html">Support &amp; FAQ</a>
             <a href="https://apps.apple.com/app/renewals-subscription-tracker/id6797020052" rel="noopener">App Store &rarr;</a>
           </div>
-        </div>
-      </div>
+        </article>
 
-      <div class="app-card">
-        <div class="app-icon" aria-hidden="true">
-          <img src="athand/icon.png" alt="" width="68" height="68">
-        </div>
-        <div class="app-info">
-          <h3 class="display">AtHand</h3>
+        <article class="app-card teal">
+          <div class="app-head">
+            <div class="app-icon" aria-hidden="true">
+              <img src="athand/icon.png" alt="" width="60" height="60">
+            </div>
+            <h3 class="display"><a href="athand/">AtHand</a></h3>
+          </div>
           <p class="app-desc">A private family document vault. Passports, IDs and certificates organized by person, with reminders before anything expires &mdash; on your phone, nowhere else. Free to try, one-time unlock.</p>
           <div class="app-links">
             <a href="athand/">Support &amp; FAQ</a>
             <span class="soon">Coming soon to the App Store</span>
           </div>
+        </article>
+
+        <div class="app-card next">
+          <h3 class="display">More on the way</h3>
+          <p class="app-desc">Every new app follows the same rules: pay once, no account, no tracking.</p>
         </div>
       </div>
     </main>
